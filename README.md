@@ -149,3 +149,4 @@ print(comparison.token_delta)
 - `min_utility`: default `0.12`; raise for terse answers, lower for deep exploration.
 - `trust_credit`: lets high-trust flows exceed a base budget while respecting `hard_cap`.
 - `allow_signature_fallback`: shrinks deep candidates to signature-only cost when useful but expensive.
+# -marginal-utility-selector
