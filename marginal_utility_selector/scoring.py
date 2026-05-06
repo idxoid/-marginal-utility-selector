@@ -72,7 +72,9 @@ def default_redundancy(candidate: Candidate, chosen: Sequence[Candidate]) -> flo
             penalty = max(penalty, 0.35)
 
     same_source_count = sum(
-        1 for selected in chosen if candidate.source_id and selected.source_id == candidate.source_id
+        1
+        for selected in chosen
+        if candidate.source_id and selected.source_id == candidate.source_id
     )
     penalty += min(0.3, 0.08 * same_source_count)
     return min(1.25, penalty)
@@ -103,7 +105,9 @@ def normalize_scores(candidates: Sequence[Candidate]) -> list[Candidate]:
     for candidate in candidates:
         graph_score = _normalize(candidate.graph_score, graph_min, graph_max)
         semantic_score = _normalize(candidate.semantic_score, semantic_min, semantic_max)
-        normalized.append(candidate.with_updates(graph_score=graph_score, semantic_score=semantic_score))
+        normalized.append(
+            candidate.with_updates(graph_score=graph_score, semantic_score=semantic_score)
+        )
     return normalized
 
 

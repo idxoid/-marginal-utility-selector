@@ -14,7 +14,13 @@ from marginal_utility_selector.scoring import (
     default_redundancy,
     normalize_scores,
 )
-from marginal_utility_selector.types import BudgetConfig, Candidate, Rejection, SelectionResult, StopReason
+from marginal_utility_selector.types import (
+    BudgetConfig,
+    Candidate,
+    Rejection,
+    SelectionResult,
+    StopReason,
+)
 
 RoleBonusFunction = Callable[[Candidate, Sequence[Candidate]], float]
 
