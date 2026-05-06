@@ -132,7 +132,11 @@ def test_compare_greedy_vs_marginal_stops_before_filling_junk() -> None:
 
     comparison = compare_strategies(pool, budget, normalize=False)
 
-    assert greedy_fill(pool, budget, normalize=False).selected_uids == ["strong", "junk-1", "junk-2"]
+    assert greedy_fill(pool, budget, normalize=False).selected_uids == [
+        "strong",
+        "junk-1",
+        "junk-2",
+    ]
     assert comparison.marginal.selected_uids == ["strong"]
     assert comparison.marginal.spent < comparison.greedy.spent
     assert default_blend(pool[0]) > default_blend(pool[1])
